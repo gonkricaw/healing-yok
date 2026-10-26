@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Healing Yok · Rencana healing sesuai dompet dan energi</title>
+<meta name="description" content="Bingung mau healing ke mana? Atur budget, energi, dan teman jalan, lalu dapatkan rencana half day, full day, atau staycation lengkap dengan pilihan transportasi.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#eef2ee;--surface:#ffffff;--surface2:#e3eae4;--ink:#16211c;--muted:#5d6b64;--line:#d5ddd7;
+  --leaf:#1d7553;--leaf-soft:#d6ebe0;--on-leaf:#ffffff;
+  --ticket:#f4c537;--ticket-ink:#2a2208;--warn:#c2482f;--warn-soft:#f7e0d9;
+  color-scheme:light;box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0f1512;--surface:#18201b;--surface2:#212b25;--ink:#e6ece8;--muted:#9babA2;--line:#2b3630;
+  --leaf:#5fc597;--leaf-soft:#1c3529;--on-leaf:#0a1610;
+  --ticket:#e8b928;--ticket-ink:#1f1904;--warn:#ef8a72;--warn-soft:#3a221c;color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1512;--surface:#18201b;--surface2:#212b25;--ink:#e6ece8;--muted:#9babA2;--line:#2b3630;
+  --leaf:#5fc597;--leaf-soft:#1c3529;--on-leaf:#0a1610;
+  --ticket:#e8b928;--ticket-ink:#1f1904;--warn:#ef8a72;--warn-soft:#3a221c;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.55 "Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+button,select,input{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--leaf);outline-offset:2px}
+.wrap{max-width:700px;margin:0 auto;padding:18px 18px 130px}
+
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:6px 0 4px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-.02em;display:flex;align-items:center;gap:8px}
+.logo i{width:22px;height:22px;border-radius:50% 50% 50% 4px;background:var(--leaf);display:inline-block;transform:rotate(-45deg)}
+.stepper{display:flex;gap:4px}
+.stepper button{border:0;background:var(--surface2);color:var(--muted);width:30px;height:30px;border-radius:50%;font-weight:700;font-size:13px}
+.stepper button[aria-current="step"]{background:var(--ink);color:var(--bg)}
+.stepper button:disabled{opacity:.45;cursor:default}
+
+h1{font-weight:800;font-size:clamp(30px,8vw,46px);line-height:1.02;letter-spacing:-.035em;margin:26px 0 10px}
+.lede{color:var(--muted);max-width:52ch;margin:0}
+h2{font-weight:800;font-size:24px;letter-spacing:-.025em;line-height:1.15;margin:26px 0 6px}
+.q{font-weight:700;font-size:15px;margin:26px 0 10px}
+.q small{font-weight:500;color:var(--muted);font-size:13px;margin-left:4px}
+.muted{color:var(--muted)}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{border:1px solid var(--line);background:var(--surface);padding:8px 14px;border-radius:999px;font-size:14px;font-weight:500}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.tile{text-align:left;border:1px solid var(--line);background:var(--surface);border-radius:14px;padding:12px 14px}
+.tile b{display:block;font-size:14.5px}
+.tile span{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.tile[aria-pressed="true"]{border-color:var(--leaf);background:var(--leaf-soft);box-shadow:inset 0 0 0 1px var(--leaf)}
+
+.row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.counter{display:inline-flex;align-items:center;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:3px}
+.counter button{border:0;background:var(--surface2);width:32px;height:32px;border-radius:50%;font-size:18px;line-height:1}
+.counter output{min-width:72px;text-align:center;font-weight:700}
+select{width:100%;padding:11px 12px;border-radius:12px;border:1px solid var(--line);background:var(--surface)}
+.slider{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.slider .val{font-weight:800;font-size:20px;letter-spacing:-.02em}
+input[type=range]{width:100%;accent-color:var(--leaf);margin:8px 0 2px}
+input[type=range]:disabled{opacity:.4}
+.ends{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+.toggle{display:flex;align-items:center;gap:10px;border:1px dashed var(--line);border-radius:12px;padding:10px 12px;margin-top:10px;background:transparent;width:100%;text-align:left}
+.toggle .sw{flex:none;width:38px;height:22px;border-radius:99px;background:var(--surface2);position:relative;transition:background .2s}
+.toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:16px;height:16px;border-radius:50%;background:var(--muted);transition:transform .2s,background .2s}
+.toggle[aria-pressed="true"] .sw{background:var(--leaf)}
+.toggle[aria-pressed="true"] .sw::after{transform:translateX(16px);background:var(--on-leaf)}
+.toggle small{display:block;color:var(--muted);font-size:12.5px}
+
+.dock{position:fixed;left:0;right:0;bottom:0;background:var(--surface);border-top:1px solid var(--line);padding:12px 18px calc(12px + env(safe-area-inset-bottom,0px));z-index:5}
+.dock .in{max-width:700px;margin:0 auto;display:flex;align-items:center;gap:12px}
+.dock .info{flex:1;font-size:13px;color:var(--muted);line-height:1.35}
+.dock .info b{color:var(--ink);font-size:14px}
+.btn{border:0;border-radius:999px;padding:13px 20px;font-weight:700;background:var(--leaf);color:var(--on-leaf);white-space:nowrap}
+.btn.ghost{background:var(--surface2);color:var(--ink)}
+
+.summary{display:flex;flex-wrap:wrap;gap:6px;margin:4px 0 14px}
+.summary span{background:var(--surface2);border-radius:8px;padding:4px 9px;font-size:12.5px;font-weight:600}
+.filters{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin:0 -18px 6px;padding-left:18px;padding-right:18px;scrollbar-width:none}
+.filters .chip{flex:none;font-size:13px;padding:7px 12px}
+
+.place{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;margin-top:10px;display:grid;grid-template-columns:1fr auto;gap:6px 14px}
+.place.on{border-color:var(--leaf);box-shadow:inset 0 0 0 1px var(--leaf)}
+.place .meta{font-size:12.5px;color:var(--muted);font-weight:600}
+.place h3{margin:2px 0 4px;font-size:17px;letter-spacing:-.015em}
+.place p{margin:0;font-size:13.5px;color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:9px;grid-column:1/-1}
+.tags span{font-size:12px;border:1px solid var(--line);border-radius:6px;padding:2px 7px}
+.tags .ev{background:var(--ticket);color:var(--ticket-ink);border-color:transparent;font-weight:700}
+.fit{text-align:right;min-width:72px}
+.fit b{display:block;font-size:22px;font-weight:800;letter-spacing:-.03em;line-height:1}
+.fit small{font-size:11.5px;color:var(--muted)}
+.pick{margin-top:8px;border:1px solid var(--leaf);color:var(--leaf);background:transparent;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:700}
+.place.on .pick{background:var(--leaf);color:var(--on-leaf)}
+
+/* Kartu Healing: tiket */
+.ticket{position:relative;background:var(--ticket);color:var(--ticket-ink);border-radius:20px;padding:20px 20px 18px;margin-top:18px;overflow:hidden}
+.ticket::before,.ticket::after{content:"";position:absolute;top:118px;width:22px;height:22px;border-radius:50%;background:var(--bg)}
+.ticket::before{left:-11px}.ticket::after{right:-11px}
+.ticket .perf{border-top:2px dashed rgba(42,34,8,.35);margin:16px -4px 14px}
+.ticket .ttl{font-size:13px;font-weight:700;opacity:.75}
+.ticket .score{display:flex;align-items:flex-end;gap:12px;margin-top:4px}
+.ticket .score b{font-size:64px;font-weight:800;letter-spacing:-.05em;line-height:.85}
+.ticket .score span{font-weight:700;font-size:15px;padding-bottom:4px;line-height:1.2}
+.ticket .score span small{display:block;font-weight:600;opacity:.75;font-size:12.5px}
+.ticket .figs{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.ticket .figs div{font-size:12px;font-weight:600;opacity:.85}
+.ticket .figs b{display:block;font-size:16px;font-weight:800;opacity:1;letter-spacing:-.02em}
+.meter{height:8px;border-radius:99px;background:rgba(42,34,8,.15);overflow:hidden;margin-top:12px}
+.meter i{display:block;height:100%;background:var(--ticket-ink);border-radius:inherit;transition:width .5s cubic-bezier(.2,.8,.2,1)}
+
+.modes{display:grid;gap:8px;margin-top:10px}
+.mode{display:grid;grid-template-columns:1fr auto;gap:2px 12px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 14px}
+.mode[aria-pressed="true"]{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}
+.mode .nm{font-weight:700;font-size:14.5px}
+.mode .nm em{font-style:normal;font-size:11.5px;font-weight:700;background:var(--leaf-soft);color:var(--leaf);border-radius:6px;padding:2px 6px;margin-left:6px}
+.mode .nm em.cheap{background:var(--surface2);color:var(--ink)}
+.mode .sub{font-size:12.5px;color:var(--muted)}
+.mode .sc{grid-row:1/3;grid-column:2;text-align:right;align-self:center}
+.mode .sc b{font-size:20px;font-weight:800;letter-spacing:-.02em}
+.mode .sc small{display:block;font-size:11px;color:var(--muted)}
+.mode .stress{grid-column:1;height:4px;border-radius:99px;background:var(--surface2);margin-top:6px;overflow:hidden}
+.mode .stress i{display:block;height:100%;border-radius:inherit}
+
+.advice{margin-top:10px;display:grid;gap:8px}
+.advice div{border-radius:12px;padding:11px 13px;font-size:14px;background:var(--leaf-soft)}
+.advice div.w{background:var(--warn-soft)}
+.advice div b{display:block;font-size:13px}
+
+.tl{margin-top:10px;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:6px 14px}
+.tl .it{display:grid;grid-template-columns:52px 14px 1fr;gap:10px;padding:10px 0;position:relative}
+.tl .it + .it{border-top:1px solid var(--line)}
+.tl .t{font-weight:800;font-size:14px;font-variant-numeric:tabular-nums}
+.tl .dot{width:10px;height:10px;border-radius:50%;margin-top:6px;border:2px solid var(--leaf)}
+.tl .stop .dot{background:var(--leaf)}
+.tl .stay .dot{background:var(--ticket);border-color:var(--ticket)}
+.tl .x b{font-size:14.5px}
+.tl .x small{display:block;color:var(--muted);font-size:12.5px}
+.tl .x .sw{display:inline-block;margin-top:4px;font-size:11.5px;font-weight:700;color:var(--warn)}
+.tl .day{display:block;padding:12px 0 2px;font-weight:800;font-size:13px;color:var(--leaf)}
+
+.actions{display:flex;gap:8px;margin-top:16px;flex-wrap:wrap}
+.foot{margin-top:28px;font-size:12px;color:var(--muted)}
+.toast{position:fixed;left:50%;bottom:96px;transform:translate(-50%,20px);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:999px;font-size:13.5px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:9;max-width:90vw;text-align:center}
+.toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+@media (min-width:560px){.tiles.four{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="top">
+    <div class="logo"><i></i>Healing Yok</div>
+    <nav class="stepper" id="stepper" aria-label="Langkah"></nav>
+  </div>
+  <main id="app"></main>
+  <p class="foot">Mockup. Semua tempat, harga, event, dan estimasi perjalanan adalah data dummy.</p>
+</div>
+<div class="dock"><div class="in" id="dock"></div></div>
+<div class="toast" id="toast" role="status"></div>
+
+<script>
+/* ---------- Data dummy ---------- */
+const Z={jakpus:{n:'Jakarta Pusat',x:0,y:0},jaksel:{n:'Jakarta Selatan',x:0,y:-9},jaktim:{n:'Jakarta Timur',x:8,y:-4},jakbar:{n:'Jakarta Barat',x:-9,y:0},jakut:{n:'Jakarta Utara',x:1,y:8},bekasi:{n:'Bekasi',x:19,y:-3},depok:{n:'Depok',x:-1,y:-22},tangerang:{n:'Tangerang',x:-21,y:-1},bogor:{n:'Bogor',x:-1,y:-46},puncak:{n:'Puncak',x:14,y:-62}};
+const HOME=['jakpus','jaksel','jaktim','jakbar','jakut','bekasi','depok','tangerang','bogor'];
+const CAT={taman:'Taman publik',kopi:'Ngopi & live music',event:'Event spesial',bazaar:'Bazaar kuliner',wisata:'Wisata',olahraga:'Olahraga & aktif',stay:'Staycation'};
+const P=[
+ {id:'banteng',name:'Lapangan Banteng',cat:'taman',zone:'jakpus',cost:25000,crowd:.5,calm:.65,kids:1,indoor:0,heal:73,best:['sore','malam'],desc:'Lapangan luas dan teduh di sore hari. Cocok jalan santai, piknik kecil, atau lihat lampu taman.'},
+ {id:'monas',name:'Monas',cat:'taman',zone:'jakpus',cost:30000,crowd:.85,calm:.3,kids:1,indoor:0,heal:66,best:['pagi','sore'],desc:'Ruang terbuka paling ikonik. Anak bebas lari-larian, tapi siang terik dan akhir pekan padat.'},
+ {id:'tebet',name:'Tebet Eco Park',cat:'taman',zone:'jaksel',cost:20000,crowd:.7,calm:.6,kids:1,indoor:0,heal:78,best:['pagi'],desc:'Jalur hijau, jembatan, dan area main anak. Pagi hari masih adem dan belum terlalu ramai.'},
+ {id:'literasi',name:'Taman Literasi Blok M',cat:'taman',zone:'jaksel',cost:35000,crowd:.45,calm:.72,kids:1,indoor:0,heal:72,best:['sore','malam'],desc:'Taman dan ruang baca terbuka, dekat stasiun MRT. Enak buat yang ingin tenang tapi tetap di kota.'},
+ {id:'akustik',name:'Teras Akustik',cat:'kopi',zone:'jaksel',cost:75000,crowd:.45,calm:.55,kids:0,indoor:1,heal:75,best:['malam'],ev:'Live akustik tiap malam',desc:'Kedai kopi semi-outdoor dengan panggung kecil. Lagu-lagu pelan, lampu temaram.'},
+ {id:'jazz',name:'Ruang Jazz Cikini',cat:'kopi',zone:'jakpus',cost:95000,crowd:.5,calm:.6,kids:0,indoor:1,heal:77,best:['malam'],ev:'Jazz session Jumat–Sabtu',desc:'Ngopi atau mocktail sambil dengar jazz live di gedung tua yang direnovasi.'},
+ {id:'kebunkopi',name:'Kopi Kebun Sawangan',cat:'kopi',zone:'depok',cost:55000,crowd:.3,calm:.85,kids:1,indoor:0,heal:76,best:['pagi','sore'],desc:'Ngopi di bawah pohon dengan lapangan rumput kecil. Sepi, anak bisa main sementara orang tua santai.'},
+ {id:'bazaar',name:'Bazaar Kuliner Senayan',cat:'bazaar',zone:'jakpus',cost:85000,crowd:.9,calm:.25,kids:1,indoor:0,heal:68,best:['sore','malam'],ev:'Jumat–Minggu, 16.00–23.00',desc:'Puluhan tenant jajanan lokal dan musik DJ. Ramai, seru, dan gampang kalap belanja.'},
+ {id:'pasmal',name:'Pasar Malam Nusantara',cat:'bazaar',zone:'jaktim',cost:60000,crowd:.85,calm:.3,kids:1,indoor:0,heal:67,best:['malam'],ev:'Akhir pekan ini',desc:'Jajanan daerah, permainan anak, dan kerajinan. Nostalgia pasar malam versi rapi.'},
+ {id:'festival',name:'Festival Pantai & Musik Ancol',cat:'event',zone:'jakut',cost:125000,crowd:.85,calm:.3,kids:1,indoor:0,heal:73,best:['sore','malam'],ev:'Sabtu ini, 16.00–22.00',desc:'Panggung musik di tepi pantai, food truck, dan lampion saat matahari terbenam.'},
+ {id:'museum',name:'Museum Sains Interaktif',cat:'event',zone:'jakpus',cost:65000,crowd:.55,calm:.6,kids:1,indoor:1,heal:71,best:['pagi','siang','sore'],ev:'Pameran dinosaurus sampai akhir bulan',desc:'Indoor dan ber-AC. Anak bisa menyentuh, mencoba, dan bertanya. Aman kalau hujan.'},
+ {id:'galeri',name:'Galeri Seni Kemang',cat:'wisata',zone:'jaksel',cost:40000,crowd:.35,calm:.78,kids:1,indoor:1,heal:72,best:['pagi','siang','sore'],desc:'Galeri kecil dengan pameran berganti tiap bulan. Hening, sejuk, dan bagus untuk me time.'},
+ {id:'kotatua',name:'Kawasan Kota Tua',cat:'wisata',zone:'jakbar',cost:45000,crowd:.75,calm:.45,kids:1,indoor:0,heal:70,best:['pagi','sore'],desc:'Bangunan tua, museum, dan sepeda ontel. Datang pagi sebelum panas dan ramai.'},
+ {id:'kebunraya',name:'Kebun Raya Bogor',cat:'wisata',zone:'bogor',cost:50000,crowd:.55,calm:.82,kids:1,indoor:0,heal:85,best:['pagi'],desc:'Pohon raksasa, udara sejuk, dan rumput luas. Healing paling "hijau", tapi butuh waktu perjalanan.'},
+ {id:'cfd',name:'Sepedaan di CFD Sudirman',cat:'olahraga',active:1,zone:'jakpus',cost:20000,crowd:.8,calm:.4,kids:1,indoor:0,heal:75,best:['pagi'],ev:'Minggu pagi saja',desc:'Jalan protokol bebas kendaraan. Sewa sepeda, jogging, lalu sarapan bubur di pinggir jalan.'},
+ {id:'renang',name:'Kolam Renang Keluarga Rawamangun',cat:'olahraga',active:1,zone:'jaktim',cost:45000,crowd:.55,calm:.55,kids:1,indoor:0,heal:77,best:['pagi','siang','sore'],desc:'Kolam dewasa dan kolam anak terpisah, ada perosotan. Pagi airnya paling bersih dan sepi.'},
+ {id:'pantai',name:'Pantai Ancol',cat:'olahraga',active:1,zone:'jakut',cost:60000,crowd:.6,calm:.55,kids:1,indoor:0,heal:74,best:['pagi','sore'],desc:'Main pasir, sepeda pantai, atau sekadar duduk menunggu matahari terbenam.'},
+ {id:'pantaitg',name:'Pantai Tanjung Pasir',cat:'olahraga',active:1,zone:'tangerang',cost:50000,crowd:.35,calm:.75,kids:1,indoor:0,heal:78,best:['pagi','sore'],desc:'Pantai nelayan yang lebih sepi. Bisa sewa perahu kecil dan makan ikan bakar.'},
+ {id:'gokart',name:'Sirkuit Gokart Indoor',cat:'olahraga',active:1,zone:'jakbar',cost:150000,crowd:.5,calm:.3,kids:1,indoor:1,heal:78,best:['siang','sore','malam'],ev:'Promo 2 sesi akhir pekan',desc:'Balapan di lintasan indoor ber-AC dengan papan waktu. Ada kart dobel untuk anak.'},
+ {id:'panjat',name:'Panjat Tebing Indoor',cat:'olahraga',active:1,zone:'jaksel',cost:120000,crowd:.35,calm:.5,kids:1,indoor:1,heal:75,best:['siang','sore','malam'],desc:'Bouldering untuk pemula, dipandu instruktur. Capeknya enak, pikiran langsung kosong.'},
+ {id:'padel',name:'Padel & Mini Soccer',cat:'olahraga',active:1,zone:'jaktim',cost:110000,crowd:.55,calm:.35,kids:0,indoor:1,heal:74,best:['sore','malam'],desc:'Sewa lapangan beratap per jam. Paling seru kalau datang rame-rame.'},
+ {id:'trampolin',name:'Trampoline Park',cat:'olahraga',active:1,zone:'tangerang',cost:95000,crowd:.6,calm:.35,kids:1,indoor:1,heal:73,best:['siang','sore'],desc:'Lompat-lompatan, foam pit, dan dodgeball. Anak puas, orang tua ikut berkeringat.'},
+ {id:'hotelkota',name:'Hotel Kota Tenang',cat:'stay',zone:'jakpus',price:650000,cap:2,crowd:.4,calm:.72,kids:1,indoor:1,heal:80,best:[],desc:'Kolam renang rooftop dan sarapan. Staycation tanpa macet keluar kota.'},
+ {id:'resort',name:'Resort Tepi Pantai',cat:'stay',zone:'jakut',price:950000,cap:3,crowd:.5,calm:.7,kids:1,indoor:1,heal:84,best:[],desc:'Kamar menghadap laut, kids club, dan sunset dari balkon.'},
+ {id:'glamping',name:'Glamping Kebun Bogor',cat:'stay',zone:'bogor',price:850000,cap:4,crowd:.25,calm:.88,kids:1,indoor:0,heal:87,best:[],desc:'Tenda nyaman di tengah kebun, api unggun malam, dan kabut pagi.'},
+ {id:'villa',name:'Villa Sejuk Puncak',cat:'stay',zone:'puncak',price:1500000,cap:6,crowd:.2,calm:.9,kids:1,indoor:1,heal:90,best:[],desc:'Satu villa untuk rombongan. Dapur sendiri, halaman luas, dan udara dingin.'}
+];
+const START={pagi:7.5,siang:11,sore:15,malam:18},WAKTU={pagi:'Pagi',siang:'Siang',sore:'Sore',malam:'Malam'};
+const hours=()=>S.dur==='half'?5:DUR[S.dur].nights?DUR[S.dur].h:Math.max(5,Math.min(11,23.5-START[S.waktu]));
+const DUR={half:{l:'Half day',s:'Sekitar 5 jam',h:5,max:2,nights:0},full:{l:'Full day',s:'Pulang-pergi sehari',h:11,max:3,nights:0},stay1:{l:'Staycation 1 malam',s:'Menginap, pulang besok',h:30,max:2,nights:1},stay2:{l:'Staycation 2 malam',s:'Akhir pekan panjang',h:54,max:3,nights:2}};
+const GROUP={sendiri:{l:'Sendiri',s:'Me time',n:1},pasangan:{l:'Pasangan',s:'Berdua saja',n:2},keluarga:{l:'Keluarga + anak',s:'Harus ramah anak',n:4},sahabat:{l:'Sahabat',s:'Rame-rame',n:4}};
+const MOOD={bosan:{l:'Bosan di rumah',c:35,s:60},capek:{l:'Capek kerja',c:80,s:25},qt:{l:'Butuh quality time',c:45,s:40},seru:{l:'Pengin seru-seruan',c:25,s:85}};
+const MODE={umum:{l:'Transportasi umum',s:'KRL, MRT, TransJakarta'},motor:{l:'Motor',s:'Kendaraan sendiri'},mobil:{l:'Mobil pribadi',s:'Bensin, tol, parkir'},taksi:{l:'Taksi online',s:'Pintu ke pintu'},mix:{l:'Mix',s:'Transportasi umum + ojol last mile'}};
+
+/* ---------- State ---------- */
+const S={step:1,mood:'bosan',group:'keluarga',n:4,dur:'full',waktu:'pagi',home:'jaksel',budget:900000,tua:false,capek:35,sosial:60,cat:'semua',picks:[],mode:null,rain:false};
+
+/* ---------- Helpers ---------- */
+const $=s=>document.querySelector(s);
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+const rp=v=>'Rp'+(Math.round(v/1000)*1000).toLocaleString('id-ID');
+const rpS=v=>v>=1e6?'Rp'+(v/1e6).toLocaleString('id-ID',{maximumFractionDigits:1})+' jt':'Rp'+Math.round(v/1000)+' rb';
+const dmin=m=>m<60?m+' mnt':Math.floor(m/60)+' jam'+(m%60?' '+m%60+' mnt':'');
+const clock=h=>{const t=Math.round(h*12)*5,hh=Math.floor(t/60)%24,mm=t%60;return String(hh).padStart(2,'0')+'.'+String(mm).padStart(2,'0')};
+const isStay=()=>DUR[S.dur].nights>0;
+const byId=id=>P.find(p=>p.id===id);
+const kids=()=>S.group==='keluarga';
+function dist(a,b){if(a===b)return 5;const A=Z[a],B=Z[b];return Math.round(Math.hypot(A.x-B.x,A.y-B.y)*1.25+3)}
+function toast(t){const el=$('#toast');el.textContent=t;el.classList.add('on');clearTimeout(toast.k);toast.k=setTimeout(()=>el.classList.remove('on'),2200)}
+const crowdL=c=>c>.75?'Ramai':c>.5?'Sedang':'Tenang';
+
+/* ---------- Skor kecocokan tempat ---------- */
+function fit(p){
+  const so=S.sosial/100,c=S.capek/100,d=DUR[S.dur];
+  let f=p.heal-Math.abs(p.crowd-so)*30;
+  if(kids()&&!p.kids)f-=25;
+  const km=dist(S.home,p.zone);
+  f-=km*.2*(.5+c);
+  if(S.dur==='half'&&km>35)f-=18;
+  if(p.cat!=='stay'&&!d.nights&&!p.best.includes(S.waktu))f-=S.dur==='half'?9:4;
+  if(p.active){f-=Math.max(0,c-.45)*40;if(S.mood==='seru')f+=6}
+  const pp=S.budget/S.n;
+  const pc=p.cat==='stay'?p.price*d.nights/Math.min(p.cap,S.n):p.cost;
+  if(pc>pp*.6)f-=15;
+  if(S.rain&&!p.indoor)f-=18;
+  return Math.round(clamp(f,0,99));
+}
+const avail=()=>P.filter(p=>isStay()||p.cat!=='stay');
+
+function autoPick(){
+  const list=avail().map(p=>({p,f:fit(p)})).sort((a,b)=>b.f-a.f),picks=[],cats=new Set();
+  if(isStay()){const h=list.find(x=>x.p.cat==='stay');if(h)picks.push(h.p.id)}
+  for(const x of list){
+    if(x.p.cat==='stay'||cats.has(x.p.cat))continue;
+    if(picks.filter(id=>byId(id).cat!=='stay').length>=DUR[S.dur].max)break;
+    picks.push(x.p.id);cats.add(x.p.cat);
+  }
+  S.picks=picks;
+}
+const hotel=()=>S.picks.map(byId).find(p=>p.cat==='stay');
+function stops(){
+  let st=S.picks.map(byId).filter(p=>p.cat!=='stay');
+  if(S.rain){const used=new Set(S.picks);st=st.map(p=>{if(p.indoor)return p;const alt=P.filter(q=>q.cat!=='stay'&&q.indoor&&!used.has(q.id)).sort((a,b)=>fit(b)-fit(a))[0];if(!alt)return p;used.add(alt.id);return{...alt,swapped:p.name}})}
+  const rank=p=>['pagi','siang','sore','malam'].findIndex(w=>p.best.includes(w));
+  return st.map((p,i)=>({p,i})).sort((a,b)=>rank(a.p)-rank(b.p)||a.i-b.i).map(x=>x.p);
+}
+
+/* ---------- Transportasi ---------- */
+function leg(m,km){
+  const n=S.n;let c=0,t=0;
+  if(m==='umum'){c=n*(4000+Math.min(km*280,16000));t=km/16*60+18;if(km>45)t*=1.3}
+  if(m==='motor'){c=Math.ceil(n/2)*km*380;t=km/26*60+5}
+  if(m==='mobil'){c=Math.ceil(n/7)*(km*1300+(km>14?13000:0));t=km/18*60+10}
+  if(m==='taksi'){c=Math.ceil(n/4)*(12000+km*4300);t=km/21*60+7}
+  if(m==='mix'){c=n*(4000+Math.min(km*260,14000))+(n>2?Math.ceil(n/4)*22000:n*13000);t=km/19*60+12}
+  return{c,t:Math.round(t)};
+}
+function stress(m){
+  const k=kids();
+  return{umum:.5+(k?.2:0)+(S.dur==='half'?0:.05),motor:.38+(S.rain?.4:.08)+(k?.35:0)+(S.n>2?.1:0),mobil:.42,taksi:.16,mix:.3+(k?.1:0)+(S.rain?.08:0)}[m];
+}
+
+/* ---------- Rencana + jadwal ---------- */
+function plan(m){
+  const d=DUR[S.dur],st=stops(),h=hotel(),tl=[],legs=[];
+  const go=(from,to,t,label)=>{const km=dist(from,to),L=leg(m,km);legs.push({km,...L});tl.push({k:'go',t,ti:label,sub:`${MODE[m].l}, ${dmin(L.t)}, ±${km} km`});return t+L.t/60};
+  if(d.nights&&h){
+    for(let k=0;k<=d.nights;k++){
+      tl.push({k:'day',ti:`Hari ${k+1}`});
+      let t,pos=h.zone;
+      if(k===0){t=go(S.home,h.zone,START[S.waktu],`Berangkat dari ${Z[S.home].n}`);if(t<14){tl.push({k:'stay',t,ti:`Titip barang di ${h.name}`,sub:'Check-in kamar jam 14.00'});t=Math.max(t+.5,14.5)}else{tl.push({k:'stay',t,ti:`Check-in di ${h.name}`,sub:'Taruh barang, istirahat sebentar'});t+=.75}}
+      else{t=7.5;tl.push({k:'stay',t,ti:`Sarapan dan santai di ${h.name}`,sub:'Tidak perlu buru-buru'});t=10}
+      const p=st[k];
+      if(p){t=go(pos,p.zone,t,`Jalan ke ${p.name}`);tl.push({k:'stop',t,ti:p.name,sub:`${CAT[p.cat]}, sekitar 2,5 jam`,sw:p.swapped});t+=2.5;pos=p.zone}
+      if(k<d.nights){if(p)t=go(pos,h.zone,t,`Balik ke ${h.name}`);tl.push({k:'stay',t:Math.max(t,18.5),ti:'Malam santai di penginapan',sub:'Makan malam, berenang, atau tidur cepat'})}
+      else{t=go(pos,S.home,Math.max(t,12),'Pulang');tl.push({k:'end',t,ti:'Sampai rumah',sub:'Masih ada waktu istirahat sebelum Senin'})}
+    }
+  }else{
+    const pts=[S.home,...st.map(p=>p.zone),S.home];
+    const road=pts.slice(1).reduce((a,z,i)=>a+leg(m,dist(pts[i],z)).t,0)/60;
+    const stayH=clamp((hours()-road)/Math.max(1,st.length),1,S.dur==='half'?2.5:3.5);
+    let t=START[S.waktu],pos=S.home;
+    st.forEach((p,i)=>{t=go(pos,p.zone,t,i?`Lanjut ke ${p.name}`:`Berangkat dari ${Z[S.home].n}`);tl.push({k:'stop',t,ti:p.name,sub:`${CAT[p.cat]}, sekitar ${dmin(Math.round(stayH*60))}`,sw:p.swapped});t+=stayH;pos=p.zone});
+    t=go(pos,S.home,t,'Pulang');tl.push({k:'end',t,ti:'Sampai rumah',sub:''});
+  }
+  const nStops=st.length+(h?1:0);
+  const park=m==='motor'?Math.ceil(S.n/2)*5000*nStops:m==='mobil'?Math.ceil(S.n/7)*12000*nStops*(d.nights?1:1):0;
+  const trans=legs.reduce((a,l)=>a+l.c,0)+park;
+  const roadMin=legs.reduce((a,l)=>a+l.t,0);
+  const placeCost=st.reduce((a,p)=>a+p.cost*S.n,0);
+  const stayCost=h?Math.ceil(S.n/h.cap)*h.price*d.nights+S.n*90000*d.nights:0;
+  const total=trans+placeCost+stayCost;
+  const fits=st.map(fit);if(h)fits.push(fit(h),fit(h));
+  const base=fits.length?fits.reduce((a,b)=>a+b,0)/fits.length:0;
+  const over=Math.max(0,total-S.budget)/S.budget;
+  const roadH=roadMin/60;
+  let score=base-stress(m)*roadH*13*(.6+S.capek/100)-over*35;
+  if(!d.nights&&roadH/hours()>.4)score-=10;
+  return{m,tl,trans,roadMin,placeCost,stayCost,total,over,score:Math.round(clamp(score,0,99)),stress:stress(m)};
+}
+const label=s=>s>=80?['Healing maksimal','Pulang dengan baterai penuh']:s>=65?['Healing aman','Capeknya sepadan']:s>=50?['Lumayan, tapi ada catatan','Baca saran di bawah']:['Capek di jalan','Lebih banyak macet daripada healing'];
+
+function advice(p,all){
+  const out=[],d=DUR[S.dur],best=all.reduce((a,b)=>b.score>a.score?b:a);
+  if(p.over>0){const ok=all.filter(x=>x.total<=S.budget).sort((a,b)=>b.score-a.score)[0];
+    out.push({w:1,b:`Lewat budget ${rpS(p.total-S.budget)}`,t:ok?`Ganti ke ${MODE[ok.m].l.toLowerCase()} supaya masih masuk budget.`:'Kurangi satu tempat atau pilih yang gratis masuk, seperti taman publik.'})}
+  if(!d.nights&&p.roadMin/60/hours()>.4)out.push({w:1,b:'Waktu di jalan terlalu lama',t:`Sekitar ${dmin(p.roadMin)} habis di perjalanan dari total ${Math.round(hours())} jam. Pilih tempat yang lebih dekat ke ${Z[S.home].n}.`});
+  if(p.m==='motor'&&kids())out.push({w:1,b:'Motor kurang cocok bawa anak',t:'Jarak jauh di motor bikin anak rewel dan orang tua capek. Coba taksi online atau mix.'});
+  if(p.m==='motor'&&S.rain)out.push({w:1,b:'Hujan dan motor',t:'Bisa basah sebelum sampai. Siapkan jas hujan atau ganti moda.'});
+  if(p.m==='umum'&&S.capek>65)out.push({w:1,b:'Kamu sedang capek',t:'Desak-desakan di jam ramai bisa menghabiskan energi healing. Mix atau taksi online lebih ringan.'});
+  if(p.m!==best.m&&best.score-p.score>=6)out.push({w:0,b:`Coba ${MODE[best.m].l.toLowerCase()}`,t:`Skor healing naik ${best.score-p.score} poin dengan selisih biaya ${(best.total>=p.total?'+':'−')+rpS(Math.abs(best.total-p.total))}.`});
+  const sp=stops().filter(x=>x.active);
+  if(sp.length)out.push({w:0,b:'Bawa perlengkapan olahraga',t:`Untuk ${sp.map(x=>x.name).join(' dan ')}: baju ganti, handuk, dan air minum.${sp.some(x=>/renang|Pantai/i.test(x.name))?' Jangan lupa sunblock.':''}`});
+  if(S.waktu==='malam'&&S.dur==='full')out.push({w:0,b:'Full day dari malam',t:'Kamu akan pulang lewat tengah malam. Pastikan transportasi pulang masih tersedia.'});
+  if(p.score<50){const near=avail().filter(x=>x.cat!=='stay'&&dist(S.home,x.zone)<=12).sort((a,b)=>fit(b)-fit(a))[0];
+    if(near)out.push({w:0,b:'Jujur saja',t:`Healing tidak harus jauh. ${near.name} lebih dekat dan bisa jadi pilihan yang lebih menenangkan.`})}
+  if(!out.length)out.push({w:0,b:'Rencana ini sehat',t:'Budget aman, perjalanan tidak menguras tenaga. Tinggal berangkat.'});
+  return out;
+}
+
+/* ---------- Render ---------- */
+const pressed=b=>`aria-pressed="${b}"`;
+function step1(){
+  const pp=S.budget/S.n;
+  return `
+  <h1>Bingung mau healing ke mana?</h1>
+  <p class="lede">Ceritakan kondisimu hari ini. Kami carikan tempat, rute, dan cara berangkat yang tidak menghabiskan energi dan dompet.</p>
+  <div class="q">Lagi merasa apa?</div>
+  <div class="chips">${Object.entries(MOOD).map(([k,v])=>`<button class="chip" data-a="mood" data-v="${k}" ${pressed(S.mood===k)}>${v.l}</button>`).join('')}</div>
+  <div class="q">Healing sama siapa?</div>
+  <div class="tiles four">${Object.entries(GROUP).map(([k,v])=>`<button class="tile" data-a="group" data-v="${k}" ${pressed(S.group===k)}><b>${v.l}</b><span>${v.s}</span></button>`).join('')}</div>
+  ${S.group==='keluarga'||S.group==='sahabat'?`<div class="row" style="margin-top:12px"><span class="muted">Jumlah orang</span><div class="counter"><button data-a="n" data-v="-1" aria-label="Kurangi">−</button><output>${S.n} orang</output><button data-a="n" data-v="1" aria-label="Tambah">+</button></div></div>`:''}
+  <div class="q">Berapa lama?</div>
+  <div class="tiles">${Object.entries(DUR).map(([k,v])=>`<button class="tile" data-a="dur" data-v="${k}" ${pressed(S.dur===k)}><b>${v.l}</b><span>${v.s}</span></button>`).join('')}</div>
+  <div class="q">${isStay()?'Berangkat kapan?':'Mulai jam berapa?'}</div>
+  <div class="tiles four">${Object.entries(START).map(([k,h])=>`<button class="tile" data-a="waktu" data-v="${k}" ${pressed(S.waktu===k)}><b>${WAKTU[k]}</b><span>Mulai ${clock(h)}</span></button>`).join('')}</div>
+  <div class="q">Berangkat dari</div>
+  <select id="home" aria-label="Berangkat dari">${HOME.map(z=>`<option value="${z}" ${S.home===z?'selected':''}>${Z[z].n}</option>`).join('')}</select>
+  <div class="q">Budget total <small>untuk semua orang</small></div>
+  <div class="slider">
+    <div class="row"><span class="val" id="bv">${rp(S.budget)}</span><span class="muted" id="bp">${rpS(pp)} per orang</span></div>
+    <input type="range" id="budget" min="50000" max="5000000" step="25000" value="${S.budget}" ${S.tua?'disabled':''} aria-label="Budget total">
+    <div class="ends"><span>Rp50 rb</span><span>Rp5 jt</span></div>
+  </div>
+  <button class="toggle" data-a="tua" ${pressed(S.tua)}><span class="sw"></span><span><b>Mode tanggal tua</b><small>Kunci budget Rp50 rb per orang, tetap bisa healing</small></span></button>
+  <div class="q">Seberapa capek?</div>
+  <div class="slider"><input type="range" id="capek" min="0" max="100" value="${S.capek}" aria-label="Tingkat capek"><div class="ends"><span>Masih segar</span><span>Remuk</span></div></div>
+  <div class="q">Baterai sosial</div>
+  <div class="slider"><input type="range" id="sosial" min="0" max="100" value="${S.sosial}" aria-label="Baterai sosial"><div class="ends"><span>Pengin sepi</span><span>Pengin ramai</span></div></div>`;
+}
+function step2(){
+  const d=DUR[S.dur],cats=['semua',...Object.keys(CAT).filter(c=>c!=='stay'||isStay())];
+  const list=avail().filter(p=>S.cat==='semua'||p.cat===S.cat).map(p=>({p,f:fit(p)})).sort((a,b)=>b.f-a.f);
+  return `
+  <h2>Pilihan yang paling cocok buatmu</h2>
+  <div class="summary"><span>${GROUP[S.group].l}</span><span>${S.n} orang</span><span>${d.l}</span><span>Mulai ${WAKTU[S.waktu].toLowerCase()}</span><span>Dari ${Z[S.home].n}</span><span>Budget ${rpS(S.budget)}</span></div>
+  <p class="muted" style="margin:0 0 12px;font-size:13.5px">Sudah kami pilihkan yang paling pas. Ganti sesukamu, maksimal ${d.max} tempat${isStay()?' plus 1 penginapan':''}.</p>
+  <div class="filters">${cats.map(c=>`<button class="chip" data-a="cat" data-v="${c}" ${pressed(S.cat===c)}>${c==='semua'?'Semua':CAT[c]}</button>`).join('')}</div>
+  ${list.map(({p,f})=>{const on=S.picks.includes(p.id),km=dist(S.home,p.zone);
+    const price=p.cat==='stay'?`${rpS(p.price)}/malam, ${p.cap} org/kamar`:p.cost<=30000?`±${rpS(p.cost)}/org`:`±${rpS(p.cost)}/org`;
+    return `<article class="place ${on?'on':''}">
+      <div><div class="meta">${CAT[p.cat]}, ${Z[p.zone].n}, ±${km} km</div><h3>${p.name}</h3><p>${p.desc}</p></div>
+      <div class="fit"><b>${f}</b><small>cocok</small><br><button class="pick" data-a="pick" data-v="${p.id}">${on?'Dipilih':'Pilih'}</button></div>
+      <div class="tags">${p.ev?`<span class="ev">${p.ev}</span>`:''}<span>${price}</span><span>${crowdL(p.crowd)}</span><span>${p.indoor?'Indoor':'Outdoor'}</span>${p.kids?'<span>Ramah anak</span>':''}${p.active?'<span>Bikin berkeringat</span>':''}${p.best.length?`<span>Enak ${p.best.join(', ')}</span>`:''}</div>
+    </article>`}).join('')}`;
+}
+function step3(){
+  const all=Object.keys(MODE).map(plan),p=all.find(x=>x.m===S.mode)||all[0];
+  const best=all.reduce((a,b)=>b.score>a.score?b:a),cheap=all.reduce((a,b)=>b.total<a.total?b:a);
+  const [lb,ls]=label(p.score),pp=p.total/S.n;
+  let tl='';
+  for(const x of p.tl){
+    if(x.k==='day'){tl+=`<span class="day">${x.ti}</span>`;continue}
+    tl+=`<div class="it ${x.k}"><span class="t">${clock(x.t)}</span><span class="dot"></span><div class="x"><b>${x.ti}</b>${x.sub?`<small>${x.sub}</small>`:''}${x.sw?`<span class="sw">Plan B hujan, menggantikan ${x.sw}</span>`:''}</div></div>`;
+  }
+  return `
+  <div class="ticket" aria-live="polite">
+    <div class="ttl">Kartu Healing, ${DUR[S.dur].l.toLowerCase()} ${GROUP[S.group].l.toLowerCase()}</div>
+    <div class="score"><b>${p.score}</b><span>${lb}<small>${ls}</small></span></div>
+    <div class="meter"><i style="width:${p.score}%"></i></div>
+    <div class="perf"></div>
+    <div class="figs">
+      <div><b>${rpS(p.total)}</b>total</div>
+      <div><b>${rpS(pp)}</b>per orang</div>
+      <div><b>${dmin(p.roadMin)}</b>di jalan</div>
+    </div>
+  </div>
+  <button class="toggle" data-a="rain" ${pressed(S.rain)}><span class="sw"></span><span><b>Kalau hujan, pakai Plan B</b><small>Tempat outdoor diganti alternatif indoor terdekat</small></span></button>
+
+  <h2>Mau berangkat naik apa?</h2>
+  <p class="muted" style="margin:0;font-size:13.5px">Skor Healing Bersih adalah rasa segar dari tempatnya, dikurangi capek dan stres di perjalanan.</p>
+  <div class="modes">${all.map(x=>{const col=x.stress>.6?'var(--warn)':x.stress>.35?'var(--ticket)':'var(--leaf)';
+    return `<button class="mode" data-a="mode" data-v="${x.m}" ${pressed(x.m===p.m)}>
+      <span class="nm">${MODE[x.m].l}${x.m===best.m?'<em>Paling seimbang</em>':''}${x.m===cheap.m&&x.m!==best.m?'<em class="cheap">Paling hemat</em>':''}</span>
+      <span class="sc"><b>${x.score}</b><small>skor</small></span>
+      <span class="sub">${rpS(x.trans)} transport, ${dmin(x.roadMin)} di jalan${x.total>S.budget?', lewat budget':''}</span>
+      <span class="stress" title="Tingkat stres perjalanan"><i style="width:${Math.min(100,x.stress*100)}%;background:${col}"></i></span>
+    </button>`}).join('')}</div>
+
+  <h2>Saran jujur</h2>
+  <div class="advice">${advice(p,all).map(a=>`<div class="${a.w?'w':''}"><b>${a.b}</b>${a.t}</div>`).join('')}</div>
+
+  <h2>Jadwalnya</h2>
+  <div class="tl">${tl}</div>
+  <p class="muted" style="font-size:13px">Rincian: transport ${rp(p.trans)}, tiket dan jajan ${rp(p.placeCost)}${p.stayCost?`, penginapan dan makan ${rp(p.stayCost)}`:''}.</p>
+  <div class="actions"><button class="btn" data-a="copy">Salin rencana</button><button class="btn ghost" data-a="step" data-v="2">Ganti tempat</button><button class="btn ghost" data-a="step" data-v="1">Ubah kondisi</button></div>`;
+}
+function dock(){
+  if(S.step===1)return `<div class="info"><b>${GROUP[S.group].l}, ${DUR[S.dur].l.toLowerCase()}, ${WAKTU[S.waktu].toLowerCase()}</b><br>${rpS(S.budget)} untuk ${S.n} orang</div><button class="btn" data-a="step" data-v="2">Cari tempat</button>`;
+  if(S.step===2){const ns=S.picks.filter(id=>byId(id).cat!=='stay').length,h=hotel();
+    return `<div class="info"><b>${ns} dari ${DUR[S.dur].max} tempat dipilih</b><br>${isStay()?(h?h.name:'Belum pilih penginapan'):'Urutan diatur otomatis'}</div><button class="btn" data-a="step" data-v="3">Lihat rencana</button>`}
+  const p=plan(S.mode);return `<div class="info"><b>Skor ${p.score}, ${rpS(p.total)}</b><br>${MODE[p.m].l}</div><button class="btn" data-a="copy">Salin rencana</button>`;
+}
+function render(scroll){
+  $('#app').innerHTML=S.step===1?step1():S.step===2?step2():step3();
+  $('#dock').innerHTML=dock();
+  $('#stepper').innerHTML=[1,2,3].map(i=>`<button data-a="step" data-v="${i}" ${S.step===i?'aria-current="step"':''} ${i>S.step&&!(i===2&&S.picks.length)&&!(i===3&&S.mode)?'disabled':''} aria-label="Langkah ${i}">${i}</button>`).join('');
+  if(scroll)window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ---------- Events ---------- */
+function goStep(n){
+  if(n===2&&S.step===1){autoPick();S.cat='semua'}
+  if(n===3){
+    if(isStay()&&!hotel()){toast('Pilih satu penginapan dulu');return}
+    if(!S.picks.filter(id=>byId(id).cat!=='stay').length&&!hotel()){toast('Pilih minimal satu tempat');return}
+    if(!S.mode){const all=Object.keys(MODE).map(plan);S.mode=all.reduce((a,b)=>b.score>a.score?b:a).m}
+  }
+  S.step=n;render(true);
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-a]');if(!b||b.disabled)return;
+  const a=b.dataset.a,v=b.dataset.v;
+  if(a==='mood'){S.mood=v;S.capek=MOOD[v].c;S.sosial=MOOD[v].s}
+  else if(a==='group'){S.group=v;S.n=GROUP[v].n;if(S.tua)S.budget=50000*S.n}
+  else if(a==='n'){S.n=clamp(S.n+ +v,2,12);if(S.tua)S.budget=50000*S.n}
+  else if(a==='dur')S.dur=v;
+  else if(a==='waktu')S.waktu=v;
+  else if(a==='tua'){S.tua=!S.tua;if(S.tua)S.budget=50000*S.n}
+  else if(a==='cat')S.cat=v;
+  else if(a==='pick'){const p=byId(v);
+    if(S.picks.includes(v))S.picks=S.picks.filter(x=>x!==v);
+    else if(p.cat==='stay')S.picks=[...S.picks.filter(x=>byId(x).cat!=='stay'),v];
+    else{const ns=S.picks.filter(x=>byId(x).cat!=='stay');
+      if(ns.length>=DUR[S.dur].max){S.picks=S.picks.filter(x=>x!==ns[0]);toast(`${byId(ns[0]).name} diganti`)}
+      S.picks.push(v)}
+    S.mode=null}
+  else if(a==='mode')S.mode=v;
+  else if(a==='rain'){S.rain=!S.rain;toast(S.rain?'Plan B hujan aktif':'Plan B dimatikan')}
+  else if(a==='step'){goStep(+v);return}
+  else if(a==='copy'){copyPlan();return}
+  const y=window.scrollY;render();window.scrollTo(0,y);
+});
+document.addEventListener('input',e=>{
+  const id=e.target.id,v=+e.target.value;
+  if(id==='budget'){S.budget=v;$('#bv').textContent=rp(v);$('#bp').textContent=rpS(v/S.n)+' per orang';$('#dock').innerHTML=dock()}
+  if(id==='capek')S.capek=v;
+  if(id==='sosial')S.sosial=v;
+});
+document.addEventListener('change',e=>{if(e.target.id==='home'){S.home=e.target.value;$('#dock').innerHTML=dock()}});
+
+function copyPlan(){
+  const p=plan(S.mode),[lb]=label(p.score);
+  const lines=[`Healing Yok: ${DUR[S.dur].l}, ${GROUP[S.group].l} (${S.n} orang)`,`Skor Healing Bersih ${p.score}/100, ${lb}`,`Naik ${MODE[p.m].l.toLowerCase()}`,''];
+  p.tl.forEach(x=>lines.push(x.k==='day'?`\n${x.ti}`:`${clock(x.t)}  ${x.ti}`));
+  lines.push('',`Total ±${rp(p.total)} (±${rp(p.total/S.n)} per orang)`);
+  const txt=lines.join('\n');
+  const done=()=>toast('Rencana tersalin, tinggal kirim ke grup');
+  if(navigator.clipboard)navigator.clipboard.writeText(txt).then(done,()=>fallback(txt,done));else fallback(txt,done);
+}
+function fallback(t,cb){const ta=document.createElement('textarea');ta.value=t;document.body.appendChild(ta);ta.select();try{document.execCommand('copy');cb()}catch(_){toast('Gagal menyalin')}ta.remove()}
+
+render();
+</script>
+</body>
+</html>
