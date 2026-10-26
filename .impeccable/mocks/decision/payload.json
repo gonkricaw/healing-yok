@@ -1,0 +1,46 @@
+{
+  "title": "Pilih struktur Healing Yok",
+  "question": "Dunianya sudah pasti buku sketsa doodle crew. Pilih bagaimana hero dan alurnya disusun.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Ngobrol sama kru",
+      "kicker": "THE ROLL",
+      "lineage": "kru doodle footer, sekarang jadi pemandu",
+      "thesis": "Kru doodle yang bertanya, kamu menjawab pakai stiker, rencana tersusun sendiri.",
+      "palette": ["#ffd94a", "#141414", "#fff8d6", "#1d7553", "#8fdcff"],
+      "materials": ["tinta kering", "stiker", "balon kata"],
+      "viewport": "Wordmark HEALING raksasa dengan kru di atas hurufnya; satu karakter bertanya lewat balon kata berisi stiker jawaban; kartu skor kecil berubah tiap jawaban.",
+      "risk": "Satu pertanyaan per layar bisa terasa lambat bagi yang ingin langsung isi semua.",
+      "html": ".impeccable/mocks/decision/assigned.html",
+      "comp": ".impeccable/mocks/decision/assigned.webp"
+    },
+    {
+      "id": "baterai",
+      "label": "Baterai pulang",
+      "lineage": "baterai sosial dan rasa capek, digambar tangan",
+      "thesis": "Skor Healing Bersih digambar sebagai baterai raksasa yang terisi dan terkuras saat kamu mengatur kondisi.",
+      "palette": ["#ffd94a", "#141414", "#1d7553", "#fff8d6", "#b3261e"],
+      "materials": ["tinta", "arsir", "anotasi tulisan tangan"],
+      "viewport": "Baterai gambar tangan setinggi layar di kiri dengan catatan plus minus; judul dan slider kondisi di kanan.",
+      "risk": "Metafora baterai kuat untuk skor, tapi kru doodle jadi peran pendukung.",
+      "html": ".impeccable/mocks/decision/baterai.html",
+      "comp": ".impeccable/mocks/decision/baterai.webp"
+    },
+    {
+      "id": "tiket",
+      "label": "Tiket distempel",
+      "lineage": "Kartu Healing, objek khas produk",
+      "thesis": "Hero adalah Kartu Healing raksasa: isi kolom tiketnya, lalu stempel rencanamu.",
+      "palette": ["#1d7553", "#ffd94a", "#141414", "#fff8d6", "#b3261e"],
+      "materials": ["kertas tiket", "perforasi", "stempel karet"],
+      "viewport": "Satu tiket kuning selebar layar di atas meja hijau; wordmark tercetak di tiket, kolom isian di badan tiket, skor dan stempel di sobekan.",
+      "risk": "Tiket sebagai form bisa terasa padat di HP dan perlu dipecah per kolom.",
+      "html": ".impeccable/mocks/decision/tiket.html",
+      "comp": ".impeccable/mocks/decision/tiket.webp"
+    }
+  ],
+  "reroll": true,
+  "buildPath": { "value": "code", "toggle": true },
+  "steer": true
+}

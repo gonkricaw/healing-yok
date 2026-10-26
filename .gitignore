@@ -1,2 +1,7 @@
 /CLAUDE.md
 /HANDOFF.md
+node_modules/
+dist/
+# Impeccable: screenshot review dan log halaman keputusan tidak ikut di repo
+.impeccable/review/
+.impeccable/questions/

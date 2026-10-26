@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Gochi+Hand&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#ffd94a;color:#141414;font-family:"Plus Jakarta Sans",sans-serif;position:relative}
+body::before{content:"";position:absolute;inset:0;background:radial-gradient(#141414 1.1px,transparent 1.3px) 0 0/22px 22px;opacity:.09}
+nav{position:absolute;top:28px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:22px}
+.logo i{width:26px;height:26px;background:#1d7553;border:2.5px solid #141414;border-radius:50% 50% 50% 5px;transform:rotate(-45deg)}
+.steps{display:flex;gap:10px;font-family:"Gochi Hand";font-size:22px}
+.steps span{border:2.5px solid #141414;border-radius:40% 55% 45% 60%;padding:4px 14px;background:#fff8d6}
+.steps span.on{background:#141414;color:#ffd94a}
+.word{position:absolute;left:70px;right:70px;bottom:120px;font-family:"Bowlby One";font-size:236px;line-height:.8;letter-spacing:-6px;text-align:center}
+.word b{display:inline-block;transform:rotate(-1.5deg)}
+.word b:nth-child(2n){transform:rotate(1.8deg) translateY(6px)}
+.ground{position:absolute;left:60px;right:60px;bottom:112px;height:6px;border-top:3px solid #141414;border-radius:50%}
+.kid{position:absolute;left:640px;top:218px;width:96px;height:150px}
+.kid .head{width:62px;height:62px;border:3px solid #141414;border-radius:50%;background:#ffd94a;margin:0 auto;position:relative}
+.kid .head::before,.kid .head::after{content:"";position:absolute;top:24px;width:8px;height:8px;background:#141414;border-radius:50%}
+.kid .head::before{left:17px}.kid .head::after{right:17px}
+.kid .body{width:74px;height:70px;border:3px solid #141414;border-radius:18px 18px 8px 8px;margin:-4px auto 0;background:repeating-linear-gradient(#ffd94a 0 12px,#141414 12px 15px)}
+.cat{position:absolute;left:50px;bottom:120px;width:120px;height:150px;border:3px solid #141414;border-radius:50% 50% 14px 14px;background:#ffd94a}
+.yeti{position:absolute;right:60px;bottom:120px;width:180px;height:200px;border:3px solid #141414;border-radius:48% 48% 18px 18px;background:#ffd94a}
+.yeti::after,.cat::after{content:"";position:absolute;top:40%;left:30%;width:9px;height:9px;background:#141414;border-radius:50%;box-shadow:40px 0 #141414}
+.bubble{position:absolute;left:770px;top:110px;width:520px;background:#fff8d6;border:3px solid #141414;border-radius:28px 32px 30px 26px;padding:26px 30px;box-shadow:6px 6px 0 #141414;transform:rotate(-1deg)}
+.bubble::after{content:"";position:absolute;left:-26px;bottom:44px;width:40px;height:30px;background:#fff8d6;border-left:3px solid #141414;border-bottom:3px solid #141414;transform:skewY(-30deg)}
+.bubble small{font-family:"Gochi Hand";font-size:22px;color:#5a4a00}
+.bubble h1{font-size:40px;font-weight:800;letter-spacing:-1.2px;line-height:1.05;margin:4px 0 18px}
+.stickers{display:flex;flex-wrap:wrap;gap:12px}
+.st{font-weight:700;font-size:18px;padding:12px 18px;border:3px solid #141414;border-radius:999px;background:#fff;box-shadow:3px 3px 0 #141414}
+.st:nth-child(1){transform:rotate(-3deg);background:#141414;color:#ffd94a}
+.st:nth-child(2){transform:rotate(2deg)}
+.st:nth-child(3){transform:rotate(-1deg)}
+.st:nth-child(4){transform:rotate(3deg);background:#8fdcff}
+.lede{position:absolute;left:56px;top:120px;width:520px}
+.lede h2{font-family:"Bowlby One";font-size:64px;line-height:.95;letter-spacing:-1px}
+.lede p{font-size:20px;font-weight:500;margin-top:18px;line-height:1.45;max-width:30ch}
+.note{position:absolute;left:58px;top:400px;font-family:"Gochi Hand";font-size:26px;transform:rotate(-4deg)}
+.note::after{content:"";display:block;width:150px;height:40px;border-bottom:3px solid #141414;border-right:3px solid #141414;border-radius:0 0 60px 0;margin:-6px 0 0 140px}
+.mini{position:absolute;right:70px;top:380px;width:230px;background:#f4c537;border:3px solid #141414;border-radius:18px;padding:16px 18px;transform:rotate(4deg);box-shadow:5px 5px 0 #141414}
+.mini small{font-size:14px;font-weight:700}
+.mini b{display:block;font-family:"Bowlby One";font-size:58px;line-height:1}
+.mini i{display:block;font-style:normal;font-family:"Gochi Hand";font-size:20px}
+.dood{position:absolute;font-size:34px}
+.prog{position:absolute;left:0;right:0;bottom:40px;text-align:center;font-family:"Gochi Hand";font-size:26px}
+.prog b{display:inline-block;width:260px;height:14px;border:3px solid #141414;border-radius:99px;vertical-align:middle;margin:0 14px;background:linear-gradient(90deg,#141414 17%,#fff8d6 17%)}
+</style></head><body>
+<nav><div class="logo"><i></i>Healing Yok</div><div class="steps"><span class="on">1 Kondisi</span><span>2 Tempat</span><span>3 Rencana</span></div></nav>
+<div class="lede"><h2>Bingung mau healing ke mana?</h2><p>Kru kami tanya beberapa hal. Jawab santai, rencananya jadi sendiri.</p></div>
+<div class="note">mulai dari sini</div>
+<div class="bubble"><small>Dito nanya:</small><h1>Lagi merasa apa hari ini?</h1>
+<div class="stickers"><span class="st">Bosan di rumah</span><span class="st">Capek kerja</span><span class="st">Butuh quality time</span><span class="st">Pengin seru-seruan</span></div></div>
+<div class="mini"><small>Skor sementara</small><b>72</b><i>healing aman</i></div>
+<div class="kid"><div class="head"></div><div class="body"></div></div>
+<div class="cat"></div><div class="yeti"></div>
+<div class="word"><b>H</b><b>E</b><b>A</b><b>L</b><b>I</b><b>N</b><b>G</b></div>
+<div class="ground"></div>
+<span class="dood" style="left:620px;top:150px">★</span><span class="dood" style="left:1320px;top:330px;color:#e8402a">♥</span><span class="dood" style="left:330px;top:520px">✦</span>
+<div class="prog">pertanyaan 1 dari 6 <b></b> skip, pakai pilihan kru</div>
+</body></html>

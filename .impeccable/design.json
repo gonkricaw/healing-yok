@@ -1,0 +1,486 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-26T04:47:00.475Z",
+  "title": "Design System: Healing Yok",
+  "extensions": {
+    "colorMeta": {
+      "page": {
+        "role": "neutral",
+        "displayName": "Sunny Ground",
+        "canonical": "oklch(89.3% 0.159 93.7)",
+        "tonalRamp": [
+          "oklch(15% 0.159 93.7)",
+          "oklch(26% 0.159 93.7)",
+          "oklch(37% 0.159 93.7)",
+          "oklch(48% 0.159 93.7)",
+          "oklch(59% 0.159 93.7)",
+          "oklch(70% 0.159 93.7)",
+          "oklch(82% 0.159 93.7)",
+          "oklch(95% 0.060 93.7)"
+        ]
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Sketch Paper",
+        "canonical": "oklch(97.6% 0.045 97.5)",
+        "tonalRamp": [
+          "oklch(15% 0.045 97.5)",
+          "oklch(26% 0.045 97.5)",
+          "oklch(37% 0.045 97.5)",
+          "oklch(48% 0.045 97.5)",
+          "oklch(59% 0.045 97.5)",
+          "oklch(70% 0.045 97.5)",
+          "oklch(82% 0.045 97.5)",
+          "oklch(95% 0.045 97.5)"
+        ]
+      },
+      "paper2": {
+        "role": "neutral",
+        "displayName": "Deep Paper",
+        "canonical": "oklch(93.9% 0.096 95.0)",
+        "tonalRamp": [
+          "oklch(15% 0.096 95.0)",
+          "oklch(26% 0.096 95.0)",
+          "oklch(37% 0.096 95.0)",
+          "oklch(48% 0.096 95.0)",
+          "oklch(59% 0.096 95.0)",
+          "oklch(70% 0.096 95.0)",
+          "oklch(82% 0.096 95.0)",
+          "oklch(95% 0.060 95.0)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "oklch(19.1% 0.000 89.9)",
+        "tonalRamp": [
+          "oklch(15% 0.000 89.9)",
+          "oklch(26% 0.000 89.9)",
+          "oklch(37% 0.000 89.9)",
+          "oklch(48% 0.000 89.9)",
+          "oklch(59% 0.000 89.9)",
+          "oklch(70% 0.000 89.9)",
+          "oklch(82% 0.000 89.9)",
+          "oklch(95% 0.000 89.9)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Pencil Brown",
+        "canonical": "oklch(37.3% 0.064 91.4)",
+        "tonalRamp": [
+          "oklch(15% 0.064 91.4)",
+          "oklch(26% 0.064 91.4)",
+          "oklch(37% 0.064 91.4)",
+          "oklch(48% 0.064 91.4)",
+          "oklch(59% 0.064 91.4)",
+          "oklch(70% 0.064 91.4)",
+          "oklch(82% 0.064 91.4)",
+          "oklch(95% 0.060 91.4)"
+        ]
+      },
+      "leaf": {
+        "role": "primary",
+        "displayName": "Charge Leaf",
+        "canonical": "oklch(50.2% 0.098 162.6)",
+        "tonalRamp": [
+          "oklch(15% 0.098 162.6)",
+          "oklch(26% 0.098 162.6)",
+          "oklch(37% 0.098 162.6)",
+          "oklch(48% 0.098 162.6)",
+          "oklch(59% 0.098 162.6)",
+          "oklch(70% 0.098 162.6)",
+          "oklch(82% 0.098 162.6)",
+          "oklch(95% 0.060 162.6)"
+        ]
+      },
+      "leaf-soft": {
+        "role": "neutral",
+        "displayName": "Leaf Wash",
+        "canonical": "oklch(90.7% 0.039 150.0)",
+        "tonalRamp": [
+          "oklch(15% 0.039 150.0)",
+          "oklch(26% 0.039 150.0)",
+          "oklch(37% 0.039 150.0)",
+          "oklch(48% 0.039 150.0)",
+          "oklch(59% 0.039 150.0)",
+          "oklch(70% 0.039 150.0)",
+          "oklch(82% 0.039 150.0)",
+          "oklch(95% 0.039 150.0)"
+        ]
+      },
+      "ticket": {
+        "role": "tertiary",
+        "displayName": "Ticket Yellow",
+        "canonical": "oklch(84.2% 0.157 89.2)",
+        "tonalRamp": [
+          "oklch(15% 0.157 89.2)",
+          "oklch(26% 0.157 89.2)",
+          "oklch(37% 0.157 89.2)",
+          "oklch(48% 0.157 89.2)",
+          "oklch(59% 0.157 89.2)",
+          "oklch(70% 0.157 89.2)",
+          "oklch(82% 0.157 89.2)",
+          "oklch(95% 0.060 89.2)"
+        ]
+      },
+      "warn": {
+        "role": "secondary",
+        "displayName": "Drain Red",
+        "canonical": "oklch(50.1% 0.178 28.7)",
+        "tonalRamp": [
+          "oklch(15% 0.178 28.7)",
+          "oklch(26% 0.178 28.7)",
+          "oklch(37% 0.178 28.7)",
+          "oklch(48% 0.178 28.7)",
+          "oklch(59% 0.178 28.7)",
+          "oklch(70% 0.178 28.7)",
+          "oklch(82% 0.178 28.7)",
+          "oklch(95% 0.060 28.7)"
+        ]
+      },
+      "warn-soft": {
+        "role": "neutral",
+        "displayName": "Drain Wash",
+        "canonical": "oklch(91.1% 0.049 43.5)",
+        "tonalRamp": [
+          "oklch(15% 0.049 43.5)",
+          "oklch(26% 0.049 43.5)",
+          "oklch(37% 0.049 43.5)",
+          "oklch(48% 0.049 43.5)",
+          "oklch(59% 0.049 43.5)",
+          "oklch(70% 0.049 43.5)",
+          "oklch(82% 0.049 43.5)",
+          "oklch(95% 0.049 43.5)"
+        ]
+      },
+      "sky": {
+        "role": "tertiary",
+        "displayName": "Sparkle Sky",
+        "canonical": "oklch(85.7% 0.090 228.5)",
+        "tonalRamp": [
+          "oklch(15% 0.090 228.5)",
+          "oklch(26% 0.090 228.5)",
+          "oklch(37% 0.090 228.5)",
+          "oklch(48% 0.090 228.5)",
+          "oklch(59% 0.090 228.5)",
+          "oklch(70% 0.090 228.5)",
+          "oklch(82% 0.090 228.5)",
+          "oklch(95% 0.060 228.5)"
+        ]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Half-Charge Amber",
+        "canonical": "oklch(72.9% 0.151 64.0)",
+        "tonalRamp": [
+          "oklch(15% 0.151 64.0)",
+          "oklch(26% 0.151 64.0)",
+          "oklch(37% 0.151 64.0)",
+          "oklch(48% 0.151 64.0)",
+          "oklch(59% 0.151 64.0)",
+          "oklch(70% 0.151 64.0)",
+          "oklch(82% 0.151 64.0)",
+          "oklch(95% 0.060 64.0)"
+        ]
+      },
+      "on-leaf": {
+        "role": "neutral",
+        "displayName": "On Leaf",
+        "canonical": "oklch(97.6% 0.045 97.5)",
+        "tonalRamp": [
+          "oklch(15% 0.045 97.5)",
+          "oklch(26% 0.045 97.5)",
+          "oklch(37% 0.045 97.5)",
+          "oklch(48% 0.045 97.5)",
+          "oklch(59% 0.045 97.5)",
+          "oklch(70% 0.045 97.5)",
+          "oklch(82% 0.045 97.5)",
+          "oklch(95% 0.045 97.5)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero question only."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Step 3 section heads and the ticket verdict."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Form questions."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "One-line explanation under the hero, max 44ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Base reading text."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Button, chip, tile and dock labels."
+      },
+      "hand": {
+        "displayName": "Hand",
+        "purpose": "Annotations, sub-lines, slider ends, step pills, toast, map labels."
+      },
+      "numeral": {
+        "displayName": "Numeral",
+        "purpose": "Scores, tabular."
+      }
+    },
+    "shadows": [
+      {
+        "name": "ink-raise",
+        "value": "4px 4px 0 var(--color-ink)",
+        "purpose": "Important cards such as the ticket."
+      },
+      {
+        "name": "ink-raise-sm",
+        "value": "3px 3px 0 var(--color-ink)",
+        "purpose": "Chips, ghost buttons, selected tiles, tile hover."
+      },
+      {
+        "name": "leaf-lip",
+        "value": "0 4px 0 var(--color-leaf)",
+        "purpose": "Primary button only."
+      },
+      {
+        "name": "thumb",
+        "value": "2px 2px 0 var(--color-ink)",
+        "purpose": "Slider thumb."
+      },
+      {
+        "name": "battery-drop",
+        "value": "drop-shadow(7px 7px 0 var(--color-ink)) to drop-shadow(9px 9px 0 var(--color-ink))",
+        "purpose": "SVG battery (a filter, not box-shadow)."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-house",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Default ease for press, entry, toast, toggle and battery level."
+      },
+      {
+        "name": "press",
+        "value": "200ms ease-house; 100ms on active",
+        "purpose": "Lift 2px on hover, sink 2px and drop the shadow on press."
+      },
+      {
+        "name": "battery-tween",
+        "value": "700ms ease-out quart (numeral); 900ms ease-house (strip fill)",
+        "purpose": "Charge level changes."
+      },
+      {
+        "name": "sk-in",
+        "value": "700ms ease-house, staggered by --d",
+        "purpose": "Entry rise of 14px keeping the element's rotation."
+      },
+      {
+        "name": "outline-draw",
+        "value": "1.1s cubic-bezier(0.65, 0, 0.35, 1)",
+        "purpose": "Battery outline draws in on first view."
+      },
+      {
+        "name": "liquid",
+        "value": "wave 2.6s linear infinite; bubble 1.4s; drip 1.1s",
+        "purpose": "Battery liquid life; hidden under reduced motion."
+      },
+      {
+        "name": "view-transition",
+        "value": "out 220ms cubic-bezier(0.4, 0, 1, 1); in 420ms ease-house",
+        "purpose": "Step changes."
+      },
+      {
+        "name": "float",
+        "value": "5s ease-in-out infinite",
+        "purpose": "Drifting doodles; stopped under reduced motion."
+      },
+      {
+        "name": "blink",
+        "value": "4.2s ease-in-out infinite",
+        "purpose": "Crew eyes."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "all animations and transitions 1ms, one iteration",
+        "purpose": "prefers-reduced-motion: reduce."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "filters": [
+      {
+        "name": "sk-rough",
+        "value": "feTurbulence fractalNoise baseFrequency 0.035 numOctaves 2 seed 7; feDisplacementMap scale 2.6",
+        "purpose": "Shared hand-drawn wobble on every ink outline."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The one action per view, an inked pill on a leaf lip.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"sk-rough\" x=\"-3%\" y=\"-8%\" width=\"106%\" height=\"116%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.6\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></svg><button class=\"ds-btn-primary\">Cari tempat healing</button>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-btn-primary{position:relative;border:2.5px solid transparent;border-radius:999px;padding:12px 20px;font:700 15px/1.3 \"Plus Jakarta Sans Variable\",system-ui,sans-serif;background:var(--color-ink);color:var(--color-page);box-shadow:0 4px 0 var(--color-leaf);cursor:pointer}.ds-btn-primary::before{content:\"\";position:absolute;inset:-2.5px;border:2.5px solid var(--color-ink);border-radius:inherit;filter:url(#sk-rough);pointer-events:none}.ds-btn-primary{transition:transform 200ms cubic-bezier(0.22,1,0.36,1),box-shadow 200ms cubic-bezier(0.22,1,0.36,1)}.ds-btn-primary:hover{transform:translateY(-2px)}.ds-btn-primary:active{transform:translateY(2px);box-shadow:none;transition-duration:100ms}.ds-btn-primary:focus-visible{outline:2.5px dashed var(--color-ink);outline-offset:3px}"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action, a paper sticker with a small ink raise.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"sk-rough\" x=\"-3%\" y=\"-8%\" width=\"106%\" height=\"116%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.6\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></svg><button class=\"ds-btn-ghost\">Salin link</button>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-btn-ghost{position:relative;border:2.5px solid transparent;border-radius:999px;padding:12px 20px;font:700 15px/1.3 \"Plus Jakarta Sans Variable\",system-ui,sans-serif;background:var(--color-paper);color:var(--color-ink);box-shadow:3px 3px 0 var(--color-ink);cursor:pointer}.ds-btn-ghost::before{content:\"\";position:absolute;inset:-2.5px;border:2.5px solid var(--color-ink);border-radius:inherit;filter:url(#sk-rough);pointer-events:none}.ds-btn-ghost{transition:transform 200ms cubic-bezier(0.22,1,0.36,1),box-shadow 200ms cubic-bezier(0.22,1,0.36,1)}.ds-btn-ghost:hover{transform:translateY(-2px)}.ds-btn-ghost:active{transform:translateY(2px);box-shadow:none;transition-duration:100ms}.ds-btn-ghost:focus-visible{outline:2.5px dashed var(--color-ink);outline-offset:3px}"
+    },
+    {
+      "name": "Sticker Chip",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "Tilted paper sticker; selected is inked solid.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"sk-rough\" x=\"-3%\" y=\"-8%\" width=\"106%\" height=\"116%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.6\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></svg><div class=\"ds-chips\"><button class=\"ds-chip\" style=\"rotate:-2deg\">Bosan di rumah</button><button class=\"ds-chip\" style=\"rotate:1.5deg\">Capek kerja</button><button class=\"ds-chip ds-on\" aria-pressed=\"true\" style=\"rotate:-1deg\">Butuh quality time</button></div>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-chips{display:flex;flex-wrap:wrap;gap:10px;padding:8px}.ds-chip{position:relative;border:2.5px solid transparent;border-radius:999px;padding:8px 16px;font:700 14.5px/1.3 \"Plus Jakarta Sans Variable\",system-ui,sans-serif;background:var(--color-paper);color:var(--color-ink);box-shadow:3px 3px 0 var(--color-ink);cursor:pointer}.ds-chip.ds-on{background:var(--color-ink);color:var(--color-page)}.ds-chip::before{content:\"\";position:absolute;inset:-2.5px;border:2.5px solid var(--color-ink);border-radius:inherit;filter:url(#sk-rough);pointer-events:none}.ds-chip{transition:transform 200ms cubic-bezier(0.22,1,0.36,1),box-shadow 200ms cubic-bezier(0.22,1,0.36,1)}.ds-chip:hover{transform:translateY(-2px)}.ds-chip:active{transform:translateY(2px);box-shadow:none;transition-duration:100ms}.ds-chip:focus-visible{outline:2.5px dashed var(--color-ink);outline-offset:3px}"
+    },
+    {
+      "name": "Paper Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Hand-cut paper with a wobbling ink outline and an ink raise.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"sk-rough\" x=\"-3%\" y=\"-8%\" width=\"106%\" height=\"116%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.6\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></svg><div class=\"ds-card\"><b>Rencana ini sehat</b><p>Budget aman, perjalanan tidak menguras tenaga.</p></div>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-card{position:relative;background:var(--color-paper);border-radius:22px 26px 20px 24px;padding:12px 16px;box-shadow:4px 4px 0 var(--color-ink);rotate:-0.6deg;max-width:320px}.ds-card::before{content:\"\";position:absolute;inset:0;border:2.5px solid var(--color-ink);border-radius:inherit;filter:url(#sk-rough);pointer-events:none}.ds-card b{font:400 18px/1.2 \"Bowlby One\",sans-serif}.ds-card p{margin:6px 0 0;font-size:15px;line-height:1.55}"
+    },
+    {
+      "name": "Ink Slider",
+      "kind": "input",
+      "refersTo": "card",
+      "description": "Condition slider in a paper card: leaf progress, ticket-yellow thumb.",
+      "html": "<svg width=\"0\" height=\"0\" style=\"position:absolute\"><filter id=\"sk-rough\" x=\"-3%\" y=\"-8%\" width=\"106%\" height=\"116%\"><feTurbulence type=\"fractalNoise\" baseFrequency=\"0.035\" numOctaves=\"2\" seed=\"7\"/><feDisplacementMap in=\"SourceGraphic\" scale=\"2.6\" xChannelSelector=\"R\" yChannelSelector=\"G\"/></filter></svg><div class=\"ds-slider\"><div class=\"ds-head\"><span>Seberapa capek?</span><span class=\"ds-hand\">agak capek</span></div><input type=\"range\" class=\"ds-range\" value=\"50\" style=\"--fill:50%\" aria-label=\"Seberapa capek\"><div class=\"ds-ends ds-hand\"><span>masih segar</span><span>remuk</span></div></div>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-slider{position:relative;background:var(--color-paper);border-radius:22px 26px 20px 24px;padding:12px 16px 10px;max-width:320px}.ds-slider::before{content:\"\";position:absolute;inset:0;border:2.5px solid var(--color-ink);border-radius:inherit;filter:url(#sk-rough);pointer-events:none}.ds-head,.ds-ends{display:flex;justify-content:space-between}.ds-head{font-size:15px}.ds-hand{font-family:\"Gochi Hand\",cursive;font-size:17px}.ds-ends{font-size:16px;color:var(--color-muted)}.ds-range{-webkit-appearance:none;appearance:none;width:100%;height:30px;background:transparent;filter:url(#sk-rough);cursor:pointer}.ds-range::-webkit-slider-runnable-track{height:14px;border:2.5px solid var(--color-ink);border-radius:999px;background:linear-gradient(90deg,var(--color-leaf) 0 var(--fill),var(--color-paper) var(--fill))}.ds-range::-webkit-slider-thumb{-webkit-appearance:none;width:28px;height:28px;margin-top:-9.5px;border:2.5px solid var(--color-ink);border-radius:50%;background:var(--color-ticket);box-shadow:2px 2px 0 var(--color-ink);transition:transform 160ms cubic-bezier(0.16,1,0.3,1)}.ds-range:active::-webkit-slider-thumb{transform:scale(1.15) rotate(-8deg)}.ds-range:focus-visible{outline:2.5px dashed var(--color-ink);outline-offset:6px}"
+    },
+    {
+      "name": "Step Pills",
+      "kind": "nav",
+      "refersTo": "step-pill",
+      "description": "Lumpy handwritten step blobs; current is inked, unreached at 40%.",
+      "html": "<nav class=\"ds-steps\"><button class=\"ds-step ds-on\" aria-current=\"step\">1 Kondisi</button><button class=\"ds-step\">2 Tempat</button><button class=\"ds-step\" disabled>3 Rencana</button></nav>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-steps{display:flex;gap:6px}.ds-step{height:36px;min-width:36px;padding:0 10px;border:2.5px solid var(--color-ink);border-radius:40% 55% 45% 60%;background:var(--color-paper);color:var(--color-ink);font:400 18px/1 \"Gochi Hand\",cursive;cursor:pointer;transition:transform 200ms}.ds-step:hover{transform:translateY(-2px)}.ds-step.ds-on{background:var(--color-ink);color:var(--color-page)}.ds-step:disabled{opacity:.4;cursor:default;transform:none}.ds-step:focus-visible{outline:2.5px dashed var(--color-ink);outline-offset:3px}"
+    },
+    {
+      "name": "Battery Strip",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Horizontal battery meter: hatched charge fill colored by score, ink cap.",
+      "html": "<div class=\"ds-bat\" role=\"meter\" aria-valuenow=\"69\" aria-valuemin=\"0\" aria-valuemax=\"100\" aria-label=\"Baterai pulang\"><div class=\"ds-cell\"><div class=\"ds-fill\" style=\"transform:scaleX(.69)\"></div></div><span class=\"ds-cap\"></span><b class=\"ds-num\">69</b></div>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-bat{display:flex;align-items:center;max-width:280px}.ds-cell{position:relative;flex:1;height:32px;overflow:hidden;border:2.5px solid var(--color-ink);border-radius:12px 14px 11px 13px;background:var(--color-paper)}.ds-fill{position:absolute;inset:0;transform-origin:left;background-color:var(--color-leaf);background-image:repeating-linear-gradient(-35deg,transparent 0 8px,color-mix(in oklab,var(--color-ink) 22%,transparent) 8px 12px);transition:transform 900ms cubic-bezier(0.22,1,0.36,1)}.ds-cap{margin-left:3px;width:6px;height:16px;border:2.5px solid var(--color-ink);border-left:0;border-radius:0 4px 4px 0;background:var(--color-paper)}.ds-num{margin-left:12px;font:400 26px/1 \"Bowlby One\",sans-serif;font-variant-numeric:tabular-nums}"
+    },
+    {
+      "name": "Kartu Healing Stamp",
+      "kind": "custom",
+      "refersTo": "",
+      "description": "Red rubber stamp that closes the ticket, rotated -6deg.",
+      "html": "<span class=\"ds-stamp\">Kartu Healing</span>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-stamp{display:inline-block;rotate:-6deg;border:3px solid var(--color-warn);border-radius:10px;padding:4px 12px;font:400 17px/1.2 \"Bowlby One\",sans-serif;letter-spacing:.02em;color:var(--color-warn)}"
+    },
+    {
+      "name": "Toast",
+      "kind": "custom",
+      "refersTo": "toast",
+      "description": "Ink slip with a handwritten confirmation.",
+      "html": "<div class=\"ds-toast\" role=\"status\">Rencana tersalin, tinggal kirim ke grup</div>",
+      "css": ":host{--color-page:#ffd94a;--color-paper:#fff8d6;--color-paper2:#ffeba0;--color-ink:#141414;--color-muted:#4d3f12;--color-leaf:#1d7553;--color-ticket:#f4c537;--color-warn:#b3261e;--color-amber:#e8902a;font-family:\"Plus Jakarta Sans Variable\",system-ui,sans-serif;color:var(--color-ink)}.ds-toast{display:inline-block;border:2.5px solid var(--color-ink);border-radius:18px 22px 17px 20px;background:var(--color-ink);color:var(--color-page);padding:10px 20px;font:400 19px/1.3 \"Gochi Hand\",cursive}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Doodle Crew Sketchbook",
+    "overview": "Every surface is a page torn from a sunny sketchbook: paper cards cut by hand and laid on a yellow ground, outlined in thick wobbling ink, propped up by a hard ink shadow, and annotated in handwriting. The one instrument that runs through the whole product is a hand-drawn battery whose liquid level is the live Healing Bersih score; places charge it, travel and budget overrun drain it. The world plays, but the numbers are always the loudest thing on the page.\n\nDensity is moderate and phone-first. Controls are big stickers and paper tiles, each slightly rotated as if stuck on by hand; selecting one inks it solid. The doodle crew (small striped characters from the footer) react to the charge and blink. A night variant keeps the same sketchbook but swaps to warm ink ground, dark paper and cream ink.\n\nThe world is hand-made through one shared device, the `#sk-rough` SVG displacement filter (fractal noise, base frequency 0.035, scale 2.6), applied to card outlines, sticker outlines, the slider and the dock rule. That filter is what makes the whole app drawn, not only the battery.",
+    "keyCharacteristics": [
+      "Sunny yellow ground with a faint 22px halftone dot texture, never a gradient.",
+      "Paper surfaces with 2.5px ink outlines that wobble through `#sk-rough`.",
+      "Irregular, hand-cut corner radii; no two corners of a card match.",
+      "Hard, unblurred ink offset shadows as the only elevation.",
+      "Three-voice type: Bowlby One shouts, Plus Jakarta Sans operates, Gochi Hand annotates.",
+      "Small rotations (between -2deg and 2deg) on stickers, tiles, cards and the battery.",
+      "The battery is the running instrument on every step."
+    ],
+    "rules": [
+      {
+        "name": "The Charge Color Rule",
+        "body": "Battery fill is chosen by score only: leaf at 65 and above, amber from 50 to 64, warn below 50. No other color ever fills a battery.",
+        "section": "colors"
+      },
+      {
+        "name": "The One Ink Rule",
+        "body": "Outlines, text, shadows and the focus ring are all the same ink token. Never introduce a second line color; a gray border breaks the sketchbook.",
+        "section": "colors"
+      },
+      {
+        "name": "The Three Voices Rule",
+        "body": "Bowlby One for questions, verdicts and numbers; Plus Jakarta Sans for what you read and press; Gochi Hand for what the crew would scribble. A button label is never handwritten, and a paragraph is never Bowlby.",
+        "section": "typography"
+      },
+      {
+        "name": "The Sentence Case Rule",
+        "body": "All type is sentence case. There are no uppercase labels and no wide-tracked caps anywhere in the build.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hard Ink Rule",
+        "body": "Shadows are solid ink offsets with zero blur. A soft or colored ambient shadow does not exist in this world.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Press Rule",
+        "body": "On press, a raised control drops its shadow and moves down 2px; on hover it lifts 2px. Shadow and translation always travel together.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Hand-Cut Rule",
+        "body": "No surface gets four equal corners unless it is a full pill or circle.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Wobble Rule",
+        "body": "Every ink outline on a card, sticker, slider or rule goes through the shared `#sk-rough` filter. A straight CSS border on paper is a bug.",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "**Do** route every new ink outline through the shared `#sk-rough` filter using the existing card or line treatment.",
+      "**Do** use the hard ink shadows (4px 4px 0 and 3px 3px 0) and drop them on press.",
+      "**Do** fill batteries by the Charge Color Rule: leaf at 65 and above, amber from 50, warn below 50.",
+      "**Do** give stickers, tiles and cards a small rotation within -2deg to 2deg, and straighten a tile when it is selected.",
+      "**Do** keep scores in Bowlby One with tabular numerals.",
+      "**Do** ease with the house curve cubic-bezier(0.22, 1, 0.36, 1), and collapse every animation to 1ms under `prefers-reduced-motion` (wave, bubbles and drip hidden, floating doodles stopped).",
+      "**Do** move between steps with View Transitions (220ms out, 420ms in).",
+      "**Do** use a dashed 2.5px ink outline for focus."
+    ],
+    "donts": [
+      "**Don't** blur a shadow or tint it; depth is solid ink only.",
+      "**Don't** use warn red outside drain notes, low-charge fills and the Kartu Healing stamp; on data, leaf always means charge and warn always means drain.",
+      "**Don't** set button or chip labels in Gochi Hand, or paragraphs in Bowlby One.",
+      "**Don't** add uppercase or letter-spaced labels; everything is sentence case.",
+      "**Don't** give a paper surface four equal corners unless it is a pill or circle.",
+      "**Don't** use gradients as decoration; gradients appear only as functional fills (slider progress, battery hatch, halftone dots).",
+      "**Don't** add a second line color beside ink."
+    ]
+  }
+}

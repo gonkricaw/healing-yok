@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="id"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Gochi+Hand&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:1440px;height:900px;overflow:hidden;background:#1d7553;color:#141414;font-family:"Plus Jakarta Sans",sans-serif;position:relative}
+body::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 46px,rgba(255,255,255,.05) 46px 48px)}
+nav{position:absolute;top:28px;left:56px;right:56px;display:flex;justify-content:space-between;align-items:center;color:#fff8d6}
+.logo{display:flex;gap:10px;align-items:center;font-weight:800;font-size:22px}
+.logo i{width:26px;height:26px;background:#ffd94a;border:2.5px solid #141414;border-radius:50% 50% 50% 5px;transform:rotate(-45deg)}
+nav span{font-family:"Gochi Hand";font-size:24px}
+.t{position:absolute;left:70px;right:70px;top:150px;height:620px;background:#ffd94a;border:4px solid #141414;border-radius:34px;box-shadow:12px 12px 0 #141414;transform:rotate(-1.2deg);display:grid;grid-template-columns:1fr 380px}
+.t::before,.t::after{content:"";position:absolute;right:366px;width:48px;height:48px;border-radius:50%;background:#1d7553;border:4px solid #141414}
+.t::before{top:-28px}.t::after{bottom:-28px}
+.main{padding:40px 48px;border-right:4px dashed #141414;position:relative}
+.main small{font-weight:800;font-size:16px;letter-spacing:.5px}
+.word{font-family:"Bowlby One";font-size:168px;line-height:.82;letter-spacing:-4px;margin:10px 0 24px;transform:rotate(-1deg)}
+.fields{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.f{border:3px solid #141414;border-radius:16px;background:#fff8d6;padding:12px 14px}
+.f label{display:block;font-size:13px;font-weight:700;color:#5a4a00}
+.f b{font-size:20px;font-weight:800}
+.f.edit{box-shadow:inset 0 -6px 0 #f4c537}
+.hand{font-family:"Gochi Hand";font-size:24px;position:absolute;left:52px;bottom:34px;transform:rotate(-2deg)}
+.stub{padding:40px 36px;display:flex;flex-direction:column;justify-content:space-between}
+.stub small{font-weight:800;font-size:15px}
+.score{font-family:"Bowlby One";font-size:120px;line-height:.9}
+.stub i{font-style:normal;font-family:"Gochi Hand";font-size:26px}
+.stamp{align-self:flex-start;font-weight:800;font-size:21px;padding:18px 26px;border:4px solid #b3261e;color:#b3261e;border-radius:14px;transform:rotate(-7deg);background:rgba(255,248,214,.6);letter-spacing:.5px}
+.barcode{height:56px;background:repeating-linear-gradient(90deg,#141414 0 3px,transparent 3px 7px,#141414 7px 8px,transparent 8px 12px)}
+.crew{position:absolute;width:120px;height:140px;border:3px solid #141414;border-radius:50% 50% 14px 14px;background:#ffd94a}
+.crew::after{content:"";position:absolute;top:40%;left:28%;width:9px;height:9px;background:#141414;border-radius:50%;box-shadow:40px 0 #141414}
+.c1{left:120px;top:56px;transform:rotate(-6deg)}
+.c2{left:880px;top:62px;width:90px;height:100px}
+.bub{position:absolute;left:990px;top:70px;font-family:"Gochi Hand";font-size:24px;background:#fff8d6;border:3px solid #141414;border-radius:18px;padding:8px 14px}
+</style></head><body>
+<nav><div class="logo"><i></i>Healing Yok</div><span>tiket rencana healing, bukan tiket beneran</span></nav>
+<div class="crew c1"></div><div class="crew c2"></div><div class="bub">isi tiketnya, nanti kami stempel</div>
+<div class="t">
+<div class="main"><small>KARTU HEALING · FULL DAY · KELUARGA + ANAK</small>
+<div class="word">HEALING YOK</div>
+<div class="fields">
+<div class="f edit"><label>Berangkat dari</label><b>Jakarta Selatan</b></div>
+<div class="f edit"><label>Sama siapa</label><b>Keluarga, 4 orang</b></div>
+<div class="f edit"><label>Berapa lama</label><b>Full day, pagi</b></div>
+<div class="f edit"><label>Budget</label><b>Rp900 rb</b></div></div>
+<div class="hand">ketuk kolom mana saja untuk mengganti</div></div>
+<div class="stub"><div><small>SKOR HEALING BERSIH</small><div class="score">72</div><i>healing aman, capeknya sepadan</i></div>
+<span class="stamp">Stempel rencanaku</span><div class="barcode"></div></div>
+</div>
+</body></html>
