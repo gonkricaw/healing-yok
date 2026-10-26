@@ -5,3 +5,5 @@ dist/
 # Impeccable: screenshot review dan log halaman keputusan tidak ikut di repo
 .impeccable/review/
 .impeccable/questions/
+# Template kursus (confidential) dan deck final project, tidak untuk repo publik
+references/
